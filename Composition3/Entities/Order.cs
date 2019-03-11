@@ -53,13 +53,13 @@ namespace Composition3.Entities
             sb.Append($" ({Client.BirthDate.ToShortDateString()}) - ");
             sb.AppendLine(Client.Email);
             sb.AppendLine("Order items:");
-            double total = 0;
+
             foreach(OrderItem order in Items)
             {
-                total += order.subTotal();
-                sb.AppendLine($"{order.Product.Name}, ${order.Product.Price}, Quantity: {order.Quantity}, Subtotal: ${order.subTotal()}");
+
+                sb.AppendLine(order.ToString());
             }
-            sb.AppendLine($"Total price: ${total}");
+            sb.AppendLine($"Total price: ${Total()}");
             return sb.ToString();
 
 

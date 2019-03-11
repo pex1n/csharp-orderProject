@@ -11,15 +11,19 @@ namespace Composition3.Entities
         {
         }
 
-        public OrderItem(int quantity, Product product)
+        public OrderItem(int quantity, double price, Product product)
         {
             Quantity = quantity;
             Product = product;
-            Price = product.Price;
+            Price = price;
         }
         public double subTotal()
         {
             return Quantity * Price;
+        }
+        public override string ToString()
+        {
+            return $"{Product.Name}, ${Price}, Quantity: {Quantity}, Subtotal: ${subTotal()}";
         }
     }
 }

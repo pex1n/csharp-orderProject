@@ -37,7 +37,7 @@ namespace Composition3
                 Console.Write("Quantity: ");
                 int quantity = int.Parse(Console.ReadLine());
                 Product item = new Product(productName, price);
-                OrderItem orderItem = new OrderItem(quantity, item);
+                OrderItem orderItem = new OrderItem(quantity, price, item);
                 order.AddItem(orderItem);
             }
             Console.WriteLine();
